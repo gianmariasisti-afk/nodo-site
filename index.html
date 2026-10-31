@@ -157,22 +157,15 @@ img,svg{display:block}
 .split{display:flex;flex-wrap:wrap;gap:48px}
 .split__a{flex:1 1 340px;min-width:0}
 .split__b{flex:2 1 560px;min-width:0}
-.stages{margin:32px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:15px}
-.stages li{display:flex;align-items:center;gap:12px}
-.stages i{width:28px;height:8px;border-radius:999px}
-.search{margin-top:40px;padding:24px}
-.search__t{margin:0;font:500 18px/1.25 var(--display)}
-.search p{margin:8px 0 16px;font-size:15px;color:var(--muted)}
-.fakefield{display:flex;align-items:center;gap:10px;height:48px;padding:0 18px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--control);font-size:15px}
-.hit{margin-top:8px;padding:14px 16px;border-radius:16px;background:var(--sunken)}
-.hit small{display:block;font-size:13px;color:var(--muted)}
-.hit b{display:block;margin-top:2px;font-size:15px;font-weight:600;line-height:1.35}
-.areas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;align-content:start}
-.area{padding:24px}
-.area h3{margin:0 0 16px;font:500 18px/1.25 var(--display)}
-.area ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
-.area li>span{display:flex;justify-content:space-between;gap:12px;font-size:15px;font-weight:600}
-.area em{flex:none;font-style:normal;font-weight:500;color:var(--muted)}
+
+/* Files, in one card */
+.fs{margin-top:40px;padding:24px 28px}
+.fs__bar{display:flex;gap:3px;height:14px;border-radius:999px;overflow:hidden}
+.fs__key{display:flex;flex-wrap:wrap;gap:8px 20px;margin:16px 0 0;padding:0;list-style:none;font-size:15px;color:var(--ink-2)}
+.fs__key li{display:inline-flex;align-items:center;gap:8px}
+.fs__key i{width:10px;height:10px;border-radius:50%}
+.fs__key b{color:var(--ink);font-weight:600}
+.fs__areas{margin:16px 0 0;padding-top:16px;border-top:1px solid var(--hairline);font-size:14px;line-height:1.6;color:var(--muted)}
 
 /* People */
 .ep{margin-top:48px;padding:28px}
@@ -313,55 +306,19 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 </section>
 
 <section id="files" class="pad section">
-<div class="wrap split">
-<div class="split__a">
+<div class="wrap">
 <h2 class="h2">17 EU laws in the making.</h2>
-<p class="lede" style="max-width:440px">Grouped by policy area. Follow the ones you work on and keep your own list of people on each.</p>
-<ol class="stages" aria-label="The five stages">
-<li><i style="background:var(--s1)" aria-hidden="true"></i>Pre-proposal</li>
-<li><i style="background:var(--s2)" aria-hidden="true"></i>Positions forming</li>
-<li><i style="background:var(--s3)" aria-hidden="true"></i>In the Council</li>
-<li><i style="background:var(--s4)" aria-hidden="true"></i>In trilogue</li>
-<li><i style="background:var(--s5);box-shadow:0 0 0 2px var(--canvas),0 0 0 3px var(--s5)" aria-hidden="true"></i>In force</li>
-</ol>
-<div class="card search">
-<p class="search__t">Search the way Brussels talks</p>
-<p>Type the nickname. nodo answers with the official title, the procedure and the rapporteur.</p>
-<div aria-hidden="true">
-<div class="fakefield"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111312" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>grids</div>
-<div class="hit"><small>Grids Package · known officially as</small><b>European Grids Package: TEN-E regulation and permitting directive</b></div>
-</div>
-<p style="margin:16px 0 0;font-size:14px">A file nodo doesn't follow yet? Generate its page from the Parliament's procedure file.</p>
-</div>
-</div>
-<div class="split__b areas">
-<div class="card area"><h3>Digital and tech</h3><ul>
-<li><span>Digital Omnibus (data)<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>Digital Networks Act<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>Digital Fairness Act<em>Pre-proposal</em></span><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>Chips Act 2.0 and CADA<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>EU KIDS Act<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>AI Act after the Omnibus<em>In force</em></span><span class="meter m5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-</ul></div>
-<div class="card area"><h3>Energy, climate and transport</h3><ul>
-<li><span>Grids Package<em>In trilogue</em></span><span class="meter m4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>CO2 standards for cars<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>AFIR review<em>Pre-proposal</em></span><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-</ul></div>
-<div class="card area"><h3>Budget, finance and defence</h3><ul>
-<li><span>MFF 2028–2034<em>In the Council</em></span><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>Digital euro<em>In trilogue</em></span><span class="meter m4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>Military mobility<em>In trilogue</em></span><span class="meter m4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-</ul></div>
-<div class="card area"><h3>Health and food</h3><ul>
-<li><span>Medical devices revision<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>Biotech Act I<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>Food and feed omnibus<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-</ul></div>
-<div class="card area"><h3>Industry and research</h3><ul>
-<li><span>Industrial Accelerator Act<em>Positions forming</em></span><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-<li><span>ERA Act<em>Pre-proposal</em></span><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
-</ul></div>
+<p class="lede">Each on a five-step track from idea to law, with everyone working on it. Search the way Brussels talks: type “grids” and get the European Grids Package.</p>
+<div class="card fs">
+<div class="fs__bar" aria-hidden="true"><i style="flex:3;background:var(--s1)"></i><i style="flex:9;background:var(--s2)"></i><i style="flex:1;background:var(--s3)"></i><i style="flex:3;background:var(--s4)"></i><i style="flex:1;background:var(--s5)"></i></div>
+<ul class="fs__key" aria-label="Files by stage">
+<li><i style="background:var(--s1)" aria-hidden="true"></i><b>3</b> pre-proposal</li>
+<li><i style="background:var(--s2)" aria-hidden="true"></i><b>9</b> positions forming</li>
+<li><i style="background:var(--s3)" aria-hidden="true"></i><b>1</b> in the Council</li>
+<li><i style="background:var(--s4)" aria-hidden="true"></i><b>3</b> in trilogue</li>
+<li><i style="background:var(--s5)" aria-hidden="true"></i><b>1</b> in force</li>
+</ul>
+<p class="fs__areas">Digital and tech 6 · Energy, climate and transport 3 · Budget, finance and defence 3 · Health and food 3 · Industry and research 2</p>
 </div>
 </div>
 </section>
