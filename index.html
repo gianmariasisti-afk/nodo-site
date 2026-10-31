@@ -106,30 +106,6 @@ img,svg{display:block}
 
 /* Phone */
 .phone-wrap{flex:0 1 360px;display:flex;justify-content:center;min-width:0}
-.phone{width:340px;max-width:100%;padding:11px;border-radius:54px;background:var(--ink);box-shadow:0 40px 80px rgba(17,19,18,.28)}
-.screen{border-radius:44px;background:var(--canvas);padding:18px 14px 16px;overflow:hidden}
-.scr-bar{display:flex;align-items:center;justify-content:space-between;padding:0 4px}
-.scr-bar img{width:66px;height:auto}
-.scr-av{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--tint-sky);font:500 11px/1 var(--display)}
-.scr-menu{display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--control);font-size:12px;font-weight:500}
-.scr-date{margin:22px 4px 0;font-size:12px;font-weight:500;color:var(--muted)}
-.scr-h{margin:4px 4px 16px;font:400 27px/1.08 var(--display);letter-spacing:-.03em}
-.next{padding:16px 14px;border-radius:24px;background:var(--ink);color:#f4f6f2}
-.next__top{display:flex;justify-content:space-between;align-items:baseline}
-.next__top b{font:500 16px/1 var(--display)}
-.next__top span{font-size:11px;color:var(--lime)}
-.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;margin:12px 0 10px;text-align:center;font-size:10px;color:#a3aaa4}
-.days b{display:block;margin-top:9px;font:500 12px/1 var(--display);color:#f4f6f2}
-.days .we b{color:#a3aaa4}
-.days .today b{display:grid;place-items:center;width:26px;height:26px;margin:3px auto 0;border-radius:50%;background:var(--lime);color:var(--ink)}
-.ev{padding:9px 11px;border-radius:14px;background:rgba(244,246,242,.08);margin-top:6px}
-.ev small{display:block;font-size:10px;color:#a3aaa4}
-.ev b{display:block;font-size:13px;font-weight:600}
-.yf{margin-top:8px;padding:14px;border-radius:24px;background:var(--surface)}
-.yf>b{display:block;font:500 15px/1 var(--display)}
-.yf__row{margin-top:10px}
-.yf__row span{display:flex;justify-content:space-between;font-size:12px;font-weight:600}
-.yf__row em{font-style:normal;font-weight:500;color:var(--muted)}
 
 /* Five-step meter */
 .meter{display:flex;gap:3px;margin-top:7px}
@@ -166,6 +142,25 @@ img,svg{display:block}
 .fs__key i{width:10px;height:10px;border-radius:50%}
 .fs__key b{color:var(--ink);font-weight:600}
 .fs__areas{margin:16px 0 0;padding-top:16px;border-top:1px solid var(--hairline);font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* Real screens */
+.shot{margin:0;padding:9px;border-radius:46px;background:var(--ink);box-shadow:0 30px 60px rgba(17,19,18,.22)}
+.shot img{display:block;width:100%;height:auto;border-radius:37px;background:var(--canvas)}
+.shot--hero{width:340px;max-width:100%;padding:11px;border-radius:54px;box-shadow:0 40px 80px rgba(17,19,18,.28)}
+.shot--hero img{border-radius:44px}
+.shot--crop{margin-top:24px;max-width:240px;border-radius:40px 40px 0 0;padding-bottom:0;box-shadow:none}
+.shot--crop img{border-radius:31px 31px 0 0}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);gap:24px;margin:40px calc(-1*var(--gutter)) 0;padding:8px var(--gutter) 32px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip__item{margin:0;scroll-snap-align:center;max-width:320px;justify-self:center;width:100%}
+.strip figcaption{margin-top:16px;font-size:15px;color:var(--muted)}
+.strip figcaption b{display:block;font:500 20px/1.25 var(--display);color:var(--ink)}
+@media (max-width:640px){.strip{grid-auto-columns:72%}}
+.ep-row{display:flex;flex-wrap:wrap;gap:24px;align-items:center;margin-top:48px}
+.ep-row .ep{flex:1 1 520px;min-width:0;margin-top:0}
+.ep__shot{flex:0 1 260px;margin:0 auto}
+.ep__shot figcaption{margin-top:10px;font-size:12px;color:var(--muted);text-align:center}
+.tile{overflow:hidden}
 
 /* People */
 .ep{margin-top:48px;padding:28px}
@@ -259,27 +254,7 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 </div>
 
 <div class="phone-wrap">
-<div class="phone" role="img" aria-label="The Today screen in nodo: the date, a headline, the next seven days on your files in a black card, and your files with where each one stands">
-<div class="screen" aria-hidden="true">
-<div class="scr-bar"><img src="wordmark.svg" alt="" width="66" height="22"><span style="display:flex;gap:6px;align-items:center"><span class="scr-av">GS</span><span class="scr-menu">Menu</span></span></div>
-<p class="scr-date">Monday 2 November</p>
-<p class="scr-h">Next up: three dates on your files</p>
-<div class="next">
-<div class="next__top"><b>Next 7 days</b><span>Full calendar</span></div>
-<div class="days">
-<span class="today">M<b>2</b></span><span>T<b>3</b></span><span>W<b>4</b></span><span>T<b>5</b></span><span>F<b>6</b></span><span class="we">S<b>7</b></span><span class="we">S<b>8</b></span>
-</div>
-<div class="ev"><small>Tue · Council working party</small><b>Digital Networks Act</b></div>
-<div class="ev"><small>Wed · Trilogue</small><b>Grids Package</b></div>
-<div class="ev"><small>Thu · Committee vote</small><b>Medical devices revision</b></div>
-</div>
-<div class="yf">
-<b>Your files</b>
-<div class="yf__row"><span>Grids Package<em>In trilogue</em></span><span class="meter m4"><i></i><i></i><i></i><i></i><i></i></span></div>
-<div class="yf__row"><span>Digital Networks Act<em>Positions forming</em></span><span class="meter m2"><i></i><i></i><i></i><i></i><i></i></span></div>
-</div>
-</div>
-</div>
+<figure class="shot shot--hero"><img src="screens/today.webp" width="390" height="844" alt="The Today screen in nodo: Next up, a committee week. Since you last looked lists new shadow rapporteurs on the Chips Act 2.0 and committee opinions on CO2 standards for cars." fetchpriority="high"></figure>
 </div>
 </div>
 </section>
@@ -301,6 +276,11 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 <article class="card q q--ink on-ink"><p class="k">Today</p><h3 class="h3">What moved on my files, and what is next?</h3><p>Since you last looked: milestones, procedure steps and new people on the files you follow. Then the next seven days, one card per file, today in lime.</p></article>
 <article class="card q"><p class="k" style="color:var(--sky)">Calendar</p><h3 class="h3">When does it happen?</h3><p>The agenda of your files, this week and next, with the Parliament's own calendar one switch away. Filter to a single file to see only its dates and what happened earlier.</p></article>
 <article class="card q"><p class="k" style="color:var(--s3)">Files</p><h3 class="h3">Where does it stand, and who is on it?</h3><p>Each file on a five-step track from idea to law. Rapporteurs and shadows, the lead Commissioner and cabinet, the Council working party, and the latest developments in nodo's own words.</p></article>
+</div>
+<div class="strip" role="list">
+<figure class="strip__item" role="listitem"><div class="shot"><img src="screens/calendar.webp" width="390" height="844" loading="lazy" alt="Calendar: the weeks ahead on your files, with MFF working parties on 3 to 5 November, the ENVI vote on CO2 standards for cars and a digital euro trilogue."></div><figcaption><b>Calendar</b>Your files' dates, week by week.</figcaption></figure>
+<figure class="strip__item" role="listitem"><div class="shot"><img src="screens/files.webp" width="390" height="844" loading="lazy" alt="Files: the files you follow, each with its stage and the faces of its rapporteurs."></div><figcaption><b>Files</b>Where each law stands, at a glance.</figcaption></figure>
+<figure class="strip__item" role="listitem"><div class="shot"><img src="screens/file.webp" width="390" height="844" loading="lazy" alt="The MFF 2028 to 2034 file page: in the Council, 66 MEPs, 3 Commissioners and 5 cabinet staff, with the rapporteurs listed."></div><figcaption><b>A file</b>Everyone on it, by institution.</figcaption></figure>
 </div>
 </div>
 </section>
@@ -327,6 +307,7 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 <div class="wrap">
 <h2 class="h2">Everyone, as a contact card.</h2>
 <p class="lede">A round portrait from the institution's own site, the role in one line, and the files each person is on. Email, save or add them to a file in one tap.</p>
+<div class="ep-row">
 <div class="card ep">
 <div class="ep__head"><h3 class="h3">Parliament</h3><p>720 MEPs · tap a group to filter</p></div>
 <div class="seats" aria-hidden="true"><i style="flex:45;background:#8B1A1A"></i><i style="flex:135;background:#E4002B"></i><i style="flex:53;background:#399F43"></i><i style="flex:78;background:#A58400"></i><i style="flex:185;background:#2F8CE9"></i><i style="flex:84;background:#0054A5"></i><i style="flex:85;background:#3B3A7A"></i><i style="flex:27;background:#0995B1"></i><i style="flex:28;background:#888"></i></div>
@@ -343,9 +324,11 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 </ul>
 <p>Every profile carries the MEP's plenary speeches, written questions and rapporteur roles. On a file page, nodo also lists who spoke in committee when it was discussed.</p>
 </div>
+<figure class="ep__shot"><div class="shot"><img src="screens/mep.webp" width="390" height="844" loading="lazy" alt="Siegfried Mureşan as a contact card in nodo: portrait, EPP, Romania, with Email, Save, Add to file and Share, and the MFF file he is rapporteur on."></div><figcaption>Photo: European Parliament</figcaption></figure>
+</div>
 <div class="grid2">
 <div class="tile" style="background:var(--tint-apricot)"><h3 class="h3">Commission</h3><p>The College of 27. Each Commissioner unfolds into the cabinet, heads first, with each adviser's responsibilities. Reshuffles are checked by a person before they go live.</p></div>
-<div class="tile" style="background:var(--tint-mint)"><h3 class="h3">Council</h3><p>The Presidency clock, the 27 on a map, the Perm Reps and a QMV calculator. The Council publishes only Ambassador and Deputy names, so you add the attachés you know, and they sync to your account.</p></div>
+<div class="tile" style="background:var(--tint-mint)"><h3 class="h3">Council</h3><p>The Presidency clock, the 27 on a map, the Perm Reps and a QMV calculator. The Council publishes only Ambassador and Deputy names, so you add the attachés you know, and they sync to your account.</p><div class="shot shot--crop"><img src="screens/council.webp" width="300" height="400" loading="lazy" alt="The Council in nodo: the Ireland Presidency clock with 61 days left, and the next Coreper and ECOFIN meetings."></div></div>
 </div>
 </div>
 </section>
