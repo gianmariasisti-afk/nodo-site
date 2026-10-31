@@ -369,6 +369,20 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 (function () {
   var URL_ = "https://dmishwyqipqbfgtdpalk.supabase.co/rest/v1/waitlist";
   var KEY = "sb_publishable_D27BtfFg8CurRjDAs0Sb3Q_Kuzs_52Q";
+  var Q = new URLSearchParams(location.search);
+  function cut(v, n) { return v ? String(v).slice(0, n) : null; }
+  var UTM = { utm_source: cut(Q.get("utm_source"), 60), utm_medium: cut(Q.get("utm_medium"), 60), utm_campaign: cut(Q.get("utm_campaign"), 80) };
+  // Cookieless page analytics: no IP, user agent or identifier is stored. See privacy.html.
+  function track(ev) {
+    if (location.hostname !== "getnodo.eu" && location.hostname !== "www.getnodo.eu") return;
+    if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+    var ref = null;
+    try { var h = document.referrer && new URL(document.referrer).hostname; if (h && h.indexOf("getnodo.eu") < 0) ref = h.replace(/^www\./, "").slice(0, 120); } catch (e) {}
+    var row = { event: ev, path: location.pathname.slice(0, 200), referrer: ref, device: matchMedia("(max-width: 760px)").matches ? "mobile" : "desktop", lang: cut((navigator.language || "").toLowerCase(), 8) };
+    for (var k in UTM) row[k] = UTM[k];
+    try { fetch(URL_.replace("/waitlist", "/site_views"), { method: "POST", keepalive: true, headers: { "apikey": KEY, "Content-Type": "application/json", "Prefer": "return=minimal" }, body: JSON.stringify(row) }).catch(function () {}); } catch (e) {}
+  }
+  track("view");
   var STORE = { ios: "App Store", android: "Google Play store", both: "App Store and Google Play" };
   var form = document.getElementById("wl"), email = document.getElementById("wl-email"),
       consent = document.getElementById("wl-consent"), msg = document.getElementById("wl-msg"),
@@ -388,9 +402,10 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
     fetch(URL_, {
       method: "POST",
       headers: { "apikey": KEY, "Content-Type": "application/json", "Prefer": "return=minimal" },
-      body: JSON.stringify({ email: v, platform: p, consent: true, source: "getnodo.eu" })
+      body: JSON.stringify({ email: v, platform: p, consent: true, source: UTM.utm_source ? "getnodo.eu/" + UTM.utm_source : "getnodo.eu" })
     }).then(function (r) {
       if (r.status === 201 || r.status === 409) {
+        if (r.status === 201) track("waitlist");
         document.getElementById("wl-done-t").textContent = r.status === 409 ? "You're already on the list." : "You're on the list.";
         document.getElementById("wl-done-p").textContent = "The launch email goes to " + v + " the day nodo reaches the " + STORE[p] + ".";
         form.hidden = true; done.hidden = false; done.focus && done.setAttribute("tabindex", "-1"); done.focus();
