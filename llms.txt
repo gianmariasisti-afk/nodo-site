@@ -1,0 +1,15 @@
+# nodo
+
+> nodo is a mobile directory of the people behind EU policy: who holds which role in the European Parliament, the European Commission and the Council of the EU, where 18 EU laws in the making stand, and who is working on each one. It is an independent app built in Brussels, in beta testing, coming to the App Store and Google Play.
+
+- Audience: public affairs, policy and communications professionals working with the EU institutions.
+- Coverage: all 720 MEPs (committees, contacts, plenary speeches, written questions, rapporteur roles); the 27 Commissioners with their full cabinets and each adviser's responsibilities; the 27 Council delegations and the working parties they cover; 18 EU legislative files, each mapped to rapporteurs, shadows, the lead Commissioner, cabinet staff and the Council working party.
+- Sources: European Parliament open data and Legislative Observatory, Commission team pages, plenary agendas, Council documents. Every name in the app shows its source.
+- Independence: not run by or for an EU institution, political party, company or client; no one pays to appear in it.
+- Built by Gianmaria Sisti, a policy communications professional in Brussels.
+- Contact: hello@getnodo.eu
+
+## Pages
+
+- [Home and waitlist](https://getnodo.eu/): what nodo does, screens, data sources, FAQ
+- [Privacy notice](https://getnodo.eu/privacy.html): how the waitlist handles email addresses
