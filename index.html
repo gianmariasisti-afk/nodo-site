@@ -21,10 +21,7 @@
 <meta property="og:image:alt" content="nodo: Untangle the EU. The Today screen of the app, with the latest changes on the files you follow.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
-{"@type":"WebSite","@id":"https://getnodo.eu/#site","url":"https://getnodo.eu/","name":"nodo","alternateName":"getnodo","inLanguage":"en"},
-{"@type":"MobileApplication","@id":"https://getnodo.eu/#app","name":"nodo","url":"https://getnodo.eu/","operatingSystem":"iOS, Android","applicationCategory":"ReferenceApplication","description":"A pocket directory of the people behind EU policy: MEPs, Commissioners and their cabinets, Council delegations and working parties, and who is on each EU law in the making.","image":"https://getnodo.eu/icons/icon-512.png"}
-]}
+{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://getnodo.eu/#site", "url": "https://getnodo.eu/", "name": "nodo", "alternateName": "getnodo", "inLanguage": "en"}, {"@type": "MobileApplication", "@id": "https://getnodo.eu/#app", "name": "nodo", "url": "https://getnodo.eu/", "operatingSystem": "iOS, Android", "applicationCategory": "ReferenceApplication", "description": "A pocket directory of the people behind EU policy: MEPs, Commissioners and their cabinets, Council delegations and working parties, and who is on each EU law in the making.", "image": "https://getnodo.eu/icons/icon-512.png", "creator": {"@id": "https://getnodo.eu/#founder"}}, {"@type": "Person", "@id": "https://getnodo.eu/#founder", "name": "Gianmaria Sisti", "jobTitle": "Policy communications professional", "workLocation": {"@type": "Place", "name": "Brussels"}}, {"@type": "FAQPage", "@id": "https://getnodo.eu/#faq", "mainEntity": [{"@type": "Question", "name": "What is nodo?", "acceptedAnswer": {"@type": "Answer", "text": "nodo is a mobile directory of the people behind EU policy. It shows who holds which role in the European Parliament, the European Commission and the Council of the EU, where 18 EU laws in the making stand, and who is working on each one."}}, {"@type": "Question", "name": "Who is nodo for?", "acceptedAnswer": {"@type": "Answer", "text": "Public affairs, policy and communications professionals who work with the EU institutions, in Brussels and in the capitals."}}, {"@type": "Question", "name": "What does nodo cover?", "acceptedAnswer": {"@type": "Answer", "text": "All 720 MEPs with their committees, contacts and activity; the 27 Commissioners, each with their full cabinet and every adviser's responsibilities; the 27 Council delegations and the working parties they cover; and 18 EU laws in the making, each mapped to its rapporteurs, shadows, lead Commissioner, cabinet staff and Council working party."}}, {"@type": "Question", "name": "Where does the data come from?", "acceptedAnswer": {"@type": "Answer", "text": "From official sources: the European Parliament's open data and Legislative Observatory, the Commission's team pages, plenary agendas and Council documents. Each source is refreshed on its own schedule, from twice a day to weekly, and every name in the app shows where it comes from. Commission reshuffles are checked by a person before they go live."}}, {"@type": "Question", "name": "Is nodo independent?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. nodo is an independent project. It is not run by or for an EU institution, a political party, a company or a client, and no one pays to appear in it."}}, {"@type": "Question", "name": "When does nodo launch?", "acceptedAnswer": {"@type": "Answer", "text": "nodo is in beta testing now and will launch on the App Store and Google Play. Join the waitlist on this page to get an email the day it is available on your phone."}}, {"@type": "Question", "name": "Who is behind nodo?", "acceptedAnswer": {"@type": "Answer", "text": "nodo is built by Gianmaria Sisti, a policy communications professional in Brussels. Write to hello@getnodo.eu."}}]}]}
 </script>
 <link rel="preload" href="fonts/outfit-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -272,6 +269,26 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
 .foot__brand{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-size:14px;color:var(--muted)}
 .foot__links{display:flex;flex-wrap:wrap;gap:24px;font-size:14px}
+
+/* About and FAQ (since 1 Nov 2026): plain answers people and AI search can quote. */
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:12px;align-items:start}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+.about__card{padding:clamp(28px,3.4vw,40px);background:var(--ink);color:#f4f6f2;box-shadow:none}
+.about__card .h2{color:#f4f6f2}
+.about__card p{margin:18px 0 0;font-size:17px;line-height:1.6;color:#c8cec9}
+.about__card p b{color:#f4f6f2;font-weight:600}
+.about__card a{color:var(--lime)}
+.about__sig{display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(244,246,242,.16)}
+.about__sig .dot{flex:none;width:12px;height:12px;border-radius:50%;background:var(--lime)}
+.about__sig span{font-size:15px;color:#c8cec9}
+.faq{margin:0;padding:8px clamp(20px,2.6vw,32px)}
+.faq details{border-bottom:1px solid var(--hairline)}
+.faq details:last-child{border-bottom:0}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;list-style:none;cursor:pointer;font:500 19px/1.3 var(--display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--sunken);font:400 20px/1 var(--sans);transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 20px;max-width:620px;font-size:16px;line-height:1.6;color:var(--ink-2)}
 </style>
 </head>
 <body>
@@ -285,6 +302,7 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 <a href="#files">Files</a>
 <a href="#people">People</a>
 <a href="#data">Data</a>
+<a href="#about">About</a>
 <a class="btn btn--sm" href="#join">Join the waitlist</a>
 </div>
 </nav>
@@ -458,6 +476,27 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 </div>
 </section>
 
+<section id="about" class="pad section">
+<div class="wrap about">
+<div class="card about__card">
+<h2 class="h2">About nodo</h2>
+<p><b>nodo is an independent app built in Brussels.</b> It is not run by or for an EU institution, a political party, a company or a client, and no one pays to appear in it.</p>
+<p>It started from a simple need: knowing who is on a file, in all three institutions, without opening ten tabs. Every name comes from an official source and shows it.</p>
+<p>nodo is built by Gianmaria Sisti, a policy communications professional in Brussels.</p>
+<div class="about__sig"><span class="dot" aria-hidden="true"></span><span>Questions, corrections or a file to add: <a href="mailto:hello@getnodo.eu">hello@getnodo.eu</a></span></div>
+</div>
+<div class="card faq">
+<h2 class="sr">Questions</h2>
+<details><summary>What is nodo?</summary><p>nodo is a mobile directory of the people behind EU policy. It shows who holds which role in the European Parliament, the European Commission and the Council of the EU, where 18 EU laws in the making stand, and who is working on each one.</p></details>
+<details><summary>Who is nodo for?</summary><p>Public affairs, policy and communications professionals who work with the EU institutions, in Brussels and in the capitals.</p></details>
+<details><summary>What does nodo cover?</summary><p>All 720 MEPs with their committees, contacts and activity; the 27 Commissioners, each with their full cabinet and every adviser&#x27;s responsibilities; the 27 Council delegations and the working parties they cover; and 18 EU laws in the making, each mapped to its rapporteurs, shadows, lead Commissioner, cabinet staff and Council working party.</p></details>
+<details><summary>Where does the data come from?</summary><p>From official sources: the European Parliament&#x27;s open data and Legislative Observatory, the Commission&#x27;s team pages, plenary agendas and Council documents. Each source is refreshed on its own schedule, from twice a day to weekly, and every name in the app shows where it comes from. Commission reshuffles are checked by a person before they go live.</p></details>
+<details><summary>Is nodo independent?</summary><p>Yes. nodo is an independent project. It is not run by or for an EU institution, a political party, a company or a client, and no one pays to appear in it.</p></details>
+<details><summary>When does nodo launch?</summary><p>nodo is in beta testing now and will launch on the App Store and Google Play. Join the waitlist on this page to get an email the day it is available on your phone.</p></details>
+<details><summary>Who is behind nodo?</summary><p>nodo is built by Gianmaria Sisti, a policy communications professional in Brussels. Write to <a href="mailto:hello@getnodo.eu">hello@getnodo.eu</a>.</p></details>
+</div>
+</div>
+</section>
 <section class="pad section">
 <div class="wrap close">
 <h2>Know who is in the room before you walk in.</h2>
