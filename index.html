@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>nodo · Untangle the EU</title>
-<meta name="description" content="A pocket directory of the people behind EU policy. Who holds which role in the Parliament, the Commission and the Council, where 17 EU laws stand and who is on each one. Join the waitlist.">
+<meta name="description" content="A pocket directory of the people behind EU policy. Who holds which role in the Parliament, the Commission and the Council, where 18 EU laws stand and who is on each one. Join the waitlist.">
 <meta name="theme-color" content="#eef0ec">
 <link rel="canonical" href="https://getnodo.eu/">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
@@ -114,12 +114,21 @@ img,svg{display:block}
 .meter i:nth-child(1){--c:var(--s1)}.meter i:nth-child(2){--c:var(--s2)}.meter i:nth-child(3){--c:var(--s3)}.meter i:nth-child(4){--c:var(--s4)}.meter i:nth-child(5){--c:var(--s5)}
 
 /* Numbers */
-.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.num{padding:28px}
-.num b{display:block;font:400 64px/1 var(--display);letter-spacing:-.04em}
-.num p{margin:12px 0 0;font-size:15px;line-height:1.45;color:var(--muted)}
-.num--lime{background:var(--lime);box-shadow:none}
-.num--lime p{color:var(--ink)}
+.nums{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px}
+.nums__side{display:grid;gap:12px}
+.num{display:flex;align-items:center;gap:20px;padding:22px 28px;box-shadow:none}
+.num b{flex:none;min-width:3.1ch;font:400 48px/1 var(--display);letter-spacing:-.04em}
+.num p{margin:0;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.num--sky{background:var(--tint-sky)}.num--mint{background:var(--tint-mint)}.num--apricot{background:var(--tint-apricot)}
+.lead{display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:clamp(28px,3.4vw,40px);background:var(--lime);box-shadow:none;color:var(--ink);text-decoration:none}
+.lead__k{margin:0;font:600 13px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.lead b{display:block;margin:14px 0 0;font:400 clamp(104px,13vw,168px)/.85 var(--display);letter-spacing:-.05em}
+.lead h3{margin:16px 0 0;max-width:420px;font:500 clamp(22px,2.1vw,28px)/1.2 var(--display)}
+.lead__files{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.lead__files li{padding:6px 12px;border-radius:999px;background:rgba(17,19,18,.08);font-size:14px;line-height:1.2}
+.lead__go{font-weight:600;font-size:15px}
+.lead:hover .lead__go{text-decoration:underline}
+@media (max-width:760px){.nums{grid-template-columns:1fr}.num b{font-size:40px}}
 
 /* Grids */
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-top:48px}
@@ -219,7 +228,7 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 <div class="hero__text">
 <p class="pill eyebrow"><span class="dot" aria-hidden="true"></span>Coming to the App Store and Google Play</p>
 <h1 class="h1">Untangle the&#160;EU.</h1>
-<p class="hero__sub">Who holds which role in the Parliament, the Commission and the Council. Where 17 EU laws in the making stand, who is on each one, and what comes up on yours this week.</p>
+<p class="hero__sub">Who holds which role in the Parliament, the Commission and the Council. Where 18 EU laws in the making stand, who is on each one, and what comes up on yours this week.</p>
 
 <div id="join" class="card join">
 <form id="wl" novalidate>
@@ -257,10 +266,16 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 
 <section class="pad" aria-label="nodo in numbers">
 <div class="wrap nums">
-<div class="card num"><b>720</b><p>MEPs, with their committees, contacts and activity</p></div>
-<div class="card num"><b>27</b><p>Commissioners, each with their full cabinet</p></div>
-<div class="card num"><b>27</b><p>Council delegations and the working parties they cover</p></div>
-<div class="card num num--lime"><b>17</b><p>EU laws in the making, mapped to the people on them</p></div>
+<a class="card lead" href="#files">
+<div><p class="lead__k">Files</p><b>18</b><h3>EU laws in the making, each mapped to the people on it.</h3></div>
+<div><ul class="lead__files" aria-label="Some of the files"><li>MFF 2028–2034</li><li>Grids Package</li><li>Connecting Europe Facility</li><li>Digital Omnibus</li><li>CO2 standards for cars</li><li>Military mobility</li></ul>
+<p class="lead__go" style="margin:16px 0 0">See where they stand →</p></div>
+</a>
+<div class="nums__side">
+<div class="card num num--sky"><b>720</b><p>MEPs, with their committees, contacts and activity</p></div>
+<div class="card num num--mint"><b>491</b><p>cabinet staff, across all 27 Commissioners</p></div>
+<div class="card num num--apricot"><b>27</b><p>Council delegations and the working parties they cover</p></div>
+</div>
 </div>
 </section>
 
@@ -283,18 +298,18 @@ footer{margin-top:clamp(80px,9vw,128px);padding-top:36px;padding-bottom:max(48px
 
 <section id="files" class="pad section">
 <div class="wrap">
-<h2 class="h2">17 EU laws in the making.</h2>
+<h2 class="h2">18 EU laws in the making.</h2>
 <p class="lede">Each on a five-step track from idea to law, with everyone working on it. Search the way Brussels talks: type “grids” and get the European Grids Package.</p>
 <div class="card fs">
-<div class="fs__bar" aria-hidden="true"><i style="flex:3;background:var(--s1)"></i><i style="flex:9;background:var(--s2)"></i><i style="flex:1;background:var(--s3)"></i><i style="flex:3;background:var(--s4)"></i><i style="flex:1;background:var(--s5)"></i></div>
+<div class="fs__bar" aria-hidden="true"><i style="flex:3;background:var(--s1)"></i><i style="flex:10;background:var(--s2)"></i><i style="flex:1;background:var(--s3)"></i><i style="flex:3;background:var(--s4)"></i><i style="flex:1;background:var(--s5)"></i></div>
 <ul class="fs__key" aria-label="Files by stage">
 <li><i style="background:var(--s1)" aria-hidden="true"></i><b>3</b> pre-proposal</li>
-<li><i style="background:var(--s2)" aria-hidden="true"></i><b>9</b> positions forming</li>
+<li><i style="background:var(--s2)" aria-hidden="true"></i><b>10</b> positions forming</li>
 <li><i style="background:var(--s3)" aria-hidden="true"></i><b>1</b> in the Council</li>
 <li><i style="background:var(--s4)" aria-hidden="true"></i><b>3</b> in trilogue</li>
 <li><i style="background:var(--s5)" aria-hidden="true"></i><b>1</b> in force</li>
 </ul>
-<p class="fs__areas">Digital and tech 6 · Energy, climate and transport 3 · Budget, finance and defence 3 · Health and food 3 · Industry and research 2</p>
+<p class="fs__areas">Digital and tech 6 · Energy, climate and transport 4 · Budget, finance and defence 3 · Health and food 3 · Industry and research 2</p>
 </div>
 </div>
 </section>
